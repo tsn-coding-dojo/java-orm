@@ -16,51 +16,23 @@ public class DojoJavaOrmApplication {
 
     private static AuthorRepository authorRepository;
     private static BookRepository bookRepository;
-    private static LibraryRepository libraryRepository;
 
     @Autowired
     public DojoJavaOrmApplication(AuthorRepository authorRepository,
-                                  BookRepository bookRepository,
-                                  LibraryRepository libraryRepository)
+                                  BookRepository bookRepository)
     {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
-        this.libraryRepository = libraryRepository;
     }
 
 
     public static void main(String[] args) {
         SpringApplication.run(DojoJavaOrmApplication.class, args);
 
-        // Exo 1
-        Author author = new Author();
-        author.setName("toto");
-        authorRepository.save(author);
+        // Exo 1: Créer des objets Book et Author et sauvegarder les dans la BDD
 
-        Author author1 = new Author();
-        author1.setName("titi");
-        authorRepository.save(author1);
-        Set<Author> authors = new HashSet<>();
-        authors.add(author);
-        authors.add(author1);
+        //Exo 2: Ajouter une relation 1:N entre Author et Book (un auteur a écrit plusieurs livres)
 
-        Book book = new Book();
-        book.setTitle("livre 1");
-        book.setAuthors(authors);
-        bookRepository.save(book);
-        Book book1 = new Book();
-        book1.setTitle("livre2");
-        bookRepository.save(book1);
-
-        //Exo2
-
-//        Set<Book> books = new HashSet<>();
-//        books.add(book);
-//        books.add(book1);
-//        author.setBooks(books);
-//        author1.setBooks(books);
-//        authorRepository.save(author);
-//        authorRepository.save(author1);
-
+        //Exo 3: Modifier la relation 1:N en N:N (un livre peut aussi avoir plusieurs auteurs)
     }
 }
