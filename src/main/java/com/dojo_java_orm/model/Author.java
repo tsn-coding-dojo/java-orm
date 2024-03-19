@@ -7,6 +7,7 @@ import lombok.Setter;
 import java.util.HashSet;
 import java.util.Set;
 
+//TODO EXO1
 @Getter
 @Setter
 public class Author {

@@ -29,7 +29,7 @@ public class DojoJavaOrmApplication {
     public static void main(String[] args) {
         SpringApplication.run(DojoJavaOrmApplication.class, args);
 
-        // Exo 1: Créer des objets Book et Author et sauvegarder les dans la BDD
+        // Exo 1: Créer des objets Book et Author et les sauvegarder dans la BDD
 
         //Exo 2: Ajouter une relation 1:N entre Author et Book (un auteur a écrit plusieurs livres)
 
